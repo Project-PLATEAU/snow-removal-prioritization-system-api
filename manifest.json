@@ -1,0 +1,235 @@
+{
+  "source_base_path": "d:/PLATEAU_GitHub/snow-removal-prioritization-system-api/gh-pages/markdown",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/devMan.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/devMan.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "manual/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "manual/toc.html"
+        },
+        ".json": {
+          "relative_path": "manual/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/userMan.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/userMan.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/index1.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/index1.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/logo.svg",
+      "output": {
+        "resource": {
+          "relative_path": "resources/logo.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userMan/alert.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userMan/alert.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userMan/bld_id.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userMan/bld_id.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userMan/bld_sw.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userMan/bld_sw.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userMan/download_PLATEAU.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userMan/download_PLATEAU.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userMan/download_QGIS.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userMan/download_QGIS.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userMan/feedback.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userMan/feedback.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userMan/field_report.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userMan/field_report.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userMan/ground_sd.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userMan/ground_sd.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userMan/ground_sw.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userMan/ground_sw.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userMan/info.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userMan/info.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userMan/login.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userMan/login.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userMan/main_screen.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userMan/main_screen.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userMan/others.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userMan/others.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/userMan/srp.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/userMan/srp.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
