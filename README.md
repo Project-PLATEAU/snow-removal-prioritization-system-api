@@ -68,7 +68,6 @@
 | public | WEB公開ディレクトリー |
 | scripts | CZML形式データ作成用スクリプト |
 | templates | 各リソースのテンプレート |
-| vendor | 外部ライブラリ |
 
 ## 8. ライセンス
 
