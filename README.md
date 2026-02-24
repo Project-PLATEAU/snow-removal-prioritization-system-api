@@ -11,14 +11,14 @@
 
 本リポジトリでは、Project PLATEAUの令和7年度の建築・都市のDXの推進に向けたユースケース開発業務として実施したUC25-01「豪雪地帯の建築物における除雪優先度算出システム及び被災現場支援ツールの開発」について、その成果物である「除雪優先度算出システム」のソースコードを公開しています。「除雪優先度算出システム」は、PLATEAUの3D都市モデルを活用し、個々の建物の積雪重量や除雪優先度の推定及びブラウザ上での可視化を行うシステムです。
 
-なお、「除雪優先度算出システム」は以下3つのソースコードで構成されており、本リポジトリでは「②Snow-Removal_Prioritization-System-API」を公開しています。
+なお、「除雪優先度算出システム」は以下3つのソースコードで構成されており、本リポジトリでは「2. snow-removal_prioritization-system-api」を公開しています。インストールの順序は問いません。
 
-1. Snow-Removal_Prioritization-System\
+1. [snow-removal-prioritization-system](https://github.com/Project-PLATEAU/snow-removal-prioritization-system)\
 3D都市モデルを活用し個々の建物の積雪重量や除雪優先度を算出・表示するシステム
-2. Snow-Removal_Prioritization-System-API\
+2. [snow-removal-prioritization-system-api](https://github.com/Project-PLATEAU/snow-removal-prioritization-system-api)\
 除雪優先度算出システムに用いるデータ（演算データ、フィードバック情報等）を取得・保存するためのAPI
-3. Snow-Removal_Prioritization-System-Data\
-除雪優先度算出システム及び被災現場支援ツール※に用いるデータ（気象データ、3D都市モデル等）を収集・算出・作成するシステム
+3. [snow-removal-prioritization-system-data](https://github.com/Project-PLATEAU/snow-removal-prioritization-system-data)\
+除雪優先度算出システムに用いるデータ（気象データ、3D都市モデル等）を収集・算出・作成するシステム
 
 ## 2. 「除雪優先度算出システム」について
 
@@ -55,19 +55,24 @@
 ## 6. 動作環境
 | 項目  | 最小動作環境 | 推奨動作環境 | 
 | - | - | - | 
-| OS  | Linuxなど、Webサーバーソフトが構築できるOS | 同左 | 
+| OS  | Ubuntu 24.04.3 LTS | 同左 | 
 | CPUコア数 | 2コア以上 |  4コア以上 | 
-| メモリ | 4GB以上 | 8GB以上 | 
-| ストレージ | 50GB以上 | 100GB以上 | 
+| メモリ | 8GB以上 | 16GB以上 | 
+| ストレージ | 200GB以上 | 300GB以上 | 
 
 
 ## 7. 本リポジトリのフォルダ構成
 | フォルダ名 |　詳細 |
 |-|-|
-| . | 環境設定ファイル、システム設定ファイル、他のフォルダ |
 | public | WEB公開ディレクトリー |
 | scripts | CZML形式データ作成用スクリプト |
+| setup | 本システムをインストールするためのスクリプト及び設定ファイル |
 | templates | 各リソースのテンプレート |
+| .env.example | 環境設定ファイルのサンプル |
+| .htaccess | Webサイトの挙動を制御するための設定ファイル |
+| config.php | システム用の設定ファイル |
+| composer.json | PHPパッケージ管理ツールComposer用の設定ファイル |
+
 
 ## 8. ライセンス
 
