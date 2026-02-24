@@ -226,6 +226,19 @@
 </tr>
 </tbody>
 </table>
+<h2 id="2-5-演算データの取得方法">2-5 演算データの取得方法</h2>
+<p>演算システムによって作成された分布画像や建物のデータは、APIを通さず、URLで直接にアクセスして取得します。各種データへの取得方法は以下の通りです。<br>
+なお、以下のYYYY, MM, DD, HHは、取得するデータの年、月、日、時間を示します。</p>
+<p><strong>分布画像（積雪深）</strong></p>
+<pre><code>.../data/png/sd/YYYY/MM/sd_YYYYMMDDHH00.png
+</code></pre>
+<p><strong>分布画像（積雪重量）</strong></p>
+<pre><code>.../data/png/sw/YYYY/MM/sw_YYYYMMDDHH00.png
+</code></pre>
+<p><strong>建物の形状、積雪重量、除雪優先度のデータ</strong></p>
+<pre><code>.../data/bld_components/YYYY/MM/YYYYMMDDHH00_area_zoom.geojson
+</code></pre>
+<p>ここで、areaは地域の名前（nagaoka, tochio）、zoomはズームレーベル（1,2,3）です。</p>
 
 </article>
           </div>

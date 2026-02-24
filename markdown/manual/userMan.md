@@ -99,3 +99,26 @@ QGISにインポート可能なGeoJSONデータ（全範囲）を取得します
 | bld_id | 建物ID | 文字列 |
 | bld_name | 建物の名前 | 文字列 |
 | alertStopCheck | 登録済みの設定を削除するかどうかフラグ | 0 or 1 |
+
+
+## 2-5 演算データの取得方法
+
+演算システムによって作成された分布画像や建物のデータは、APIを通さず、URLで直接にアクセスして取得します。各種データへの取得方法は以下の通りです。\
+なお、以下のYYYY, MM, DD, HHは、取得するデータの年、月、日、時間を示します。
+
+**分布画像（積雪深）**
+```
+.../data/png/sd/YYYY/MM/sd_YYYYMMDDHH00.png
+```
+
+**分布画像（積雪重量）**
+```
+.../data/png/sw/YYYY/MM/sw_YYYYMMDDHH00.png
+```
+
+**建物の形状、積雪重量、除雪優先度のデータ**
+```
+.../data/bld_components/YYYY/MM/YYYYMMDDHH00_area_zoom.geojson
+```
+ここで、areaは地域の名前（nagaoka, tochio）、zoomはズームレーベル（1,2,3）です。
+

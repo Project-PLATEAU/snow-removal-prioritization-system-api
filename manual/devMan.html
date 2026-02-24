@@ -83,10 +83,10 @@
 <p>本書では、除雪優先度算出システム（Web API）の利用環境構築手順について記載しています。</p>
 <div class="NOTE">
 <h5>Note</h5>
-<p>除雪優先度算出システムは3つのリポジトリに分割して格納しています。</p>
+<p>除雪優先度算出システムは3つのリポジトリに分割して格納しています。インストールの順序は問いません。</p>
 <ul>
 <li><a href="https://github.com/Project-PLATEAU/Snow-Removal-Prioritization-System">snow-removal-prioritization-system</a>　（表示システム）</li>
-<li>snow-removal-prioritization-system-api　（Web API、本レポジトリー）</li>
+<li>snow-removal-prioritization-system-api　（Web API、本レポジトリ）</li>
 <li><a href="https://github.com/Project-PLATEAU/Snow-Removal-Prioritization-System-Data">snow-removal-prioritization-system-data</a> （データ演算）</li>
 </ul>
 </div>
@@ -149,9 +149,9 @@ mysql&gt; CREATE USER 'plateau_user'@'localhost' IDENTIFIED BY 'plateau_user_pas
 mysql&gt; GRANT SELECT, INSERT, UPDATE, DELETE, CREATE ON plateau.* TO 'plateau_user'@'localhost';
 mysql&gt; EXIT;
 </code></pre>
-<p>WEBサーバーのドキュメントルートに本システム用のディレクトリーを作成します。<br>
-本書では例として本システムのディレクトリーを以下のようにします。</p>
+<p>WEBサーバーのドキュメントルートに本システム用のディレクトリ及びデータにアクセスするためのディレクトリを作成します。本書では例として本システムのディレクトリーを以下のようにします。</p>
 <pre><code>/var/www/html/api
+/var/www/html/data
 </code></pre>
 <h2 id="3-2-ソースファイルのダウンロード">3-2 ソースファイルのダウンロード</h2>
 <p>本システム用のディレクトリーにソースファイルを以下のコマンドでダウンロードし、必要な設定を行います。</p>
@@ -171,6 +171,11 @@ DB_USER=plateau_user
 DB_PASS=plateau_user_password
 SCRIPT_PATH=/var/www/html/api/scripts
 DATA_DIR=/mnt/disk/data
+</code></pre>
+<h2 id="3-4-データディレクトリの準備">3-4 データディレクトリの準備</h2>
+<p>以下のスクリプトを実行すると、データディレクトリ中に演算データへのリンク及び凡例情報ファイルが作成されます。</p>
+<pre><code>cd /var/www/html/api/setup
+bash data_dir_setup.sh
 </code></pre>
 
 </article>

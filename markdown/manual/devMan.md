@@ -5,11 +5,10 @@
 本書では、除雪優先度算出システム（Web API）の利用環境構築手順について記載しています。
 
 > [!NOTE]
-> 除雪優先度算出システムは3つのリポジトリに分割して格納しています。
+> 除雪優先度算出システムは3つのリポジトリに分割して格納しています。インストールの順序は問いません。
 > * [snow-removal-prioritization-system](https://github.com/Project-PLATEAU/Snow-Removal-Prioritization-System)　（表示システム）
-> * snow-removal-prioritization-system-api　（Web API、本レポジトリー）
+> * snow-removal-prioritization-system-api　（Web API、本レポジトリ）
 > * [snow-removal-prioritization-system-data](https://github.com/Project-PLATEAU/Snow-Removal-Prioritization-System-Data) （データ演算）
-
 
 # 2 動作環境
 
@@ -41,11 +40,11 @@ mysql> GRANT SELECT, INSERT, UPDATE, DELETE, CREATE ON plateau.* TO 'plateau_use
 mysql> EXIT;
 ```
 
-WEBサーバーのドキュメントルートに本システム用のディレクトリーを作成します。\
-本書では例として本システムのディレクトリーを以下のようにします。
+WEBサーバーのドキュメントルートに本システム用のディレクトリ及びデータにアクセスするためのディレクトリを作成します。本書では例として本システムのディレクトリーを以下のようにします。
 
 ```
 /var/www/html/api
+/var/www/html/data
 ```
 
 ## 3-2 ソースファイルのダウンロード
@@ -64,7 +63,6 @@ cd /var/www/html/api
 composer install
 ```
 
-
 ## 3-3 環境設定
 
 セットアップディレクトリーにある`.env.example`を`.env`にコピーし、テキストエディターなどで必要な設定を行います。\
@@ -79,3 +77,11 @@ SCRIPT_PATH=/var/www/html/api/scripts
 DATA_DIR=/mnt/disk/data
 ```
 
+## 3-4 データディレクトリの準備
+
+以下のスクリプトを実行すると、データディレクトリ中に演算データへのリンク及び凡例情報ファイルが作成されます。
+
+```
+cd /var/www/html/api/setup
+bash data_dir_setup.sh
+```
