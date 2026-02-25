@@ -6,9 +6,9 @@
 
 > [!NOTE]
 > 除雪優先度算出システムは3つのリポジトリに分割して格納しています。インストールの順序は問いません。
-> * [snow-removal-prioritization-system](https://github.com/Project-PLATEAU/Snow-Removal-Prioritization-System)　（表示システム）
-> * snow-removal-prioritization-system-api　（Web API、本レポジトリ）
-> * [snow-removal-prioritization-system-data](https://github.com/Project-PLATEAU/Snow-Removal-Prioritization-System-Data) （データ演算）
+> * [snow-removal-prioritization-system](https://github.com/Project-PLATEAU/snow-removal-prioritization-system)　（表示システム）
+> * snow-removal-prioritization-system-api　（Web API、本リポジトリ）
+> * [snow-removal-prioritization-system-data](https://github.com/Project-PLATEAU/snow-removal-prioritization-system-data) （データ演算）
 
 # 2 動作環境
 

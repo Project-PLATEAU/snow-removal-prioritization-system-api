@@ -118,7 +118,7 @@ QGISにインポート可能なGeoJSONデータ（全範囲）を取得します
 
 **建物の形状、積雪重量、除雪優先度のデータ**
 ```
-.../data/bld_components/YYYY/MM/YYYYMMDDHH00_area_zoom.geojson
+.../data/bld_components/YYYY/MM/YYYYMMDDHH00_area_n.geojson
 ```
-ここで、areaは地域の名前（nagaoka, tochio）、zoomはズームレーベル（1,2,3）です。
+ここで、areaは地域の名前（nagaoka, tochio）、nは詳細度（1:建物幅約10m以下,2:建物幅約10～15m,3:建物幅約15m以上）です。
 
