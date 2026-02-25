@@ -1,8 +1,8 @@
 {
   "index.html": {
     "href": "index.html",
-    "title": "除雪優先度算出システム（API）",
-    "summary": "除雪優先度算出システム（API） 除雪優先度算出システムに用いるデータを取得・保存するためのAPIである。"
+    "title": "除雪優先度算出システム（Web API）",
+    "summary": "除雪優先度算出システム（Web API） 除雪優先度算出システムに用いるデータを取得・保存するためのAPIである。"
   },
   "manual/devMan.html": {
     "href": "manual/devMan.html",
