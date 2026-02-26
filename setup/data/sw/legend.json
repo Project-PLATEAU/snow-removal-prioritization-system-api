@@ -1,0 +1,35 @@
+{
+    "title": "積雪重量(kg/m<sup>2</sup>)",
+    "legend": [
+        {
+            "description": "2000～",
+            "range": [2000, null],
+            "color": "rgb(96,29,127)"
+        },
+        {
+            "description": "1000～1999",
+            "range": [1000, 2000],
+            "color": "rgb(199,22,30)"
+        },
+        {
+            "description": "500～999",
+            "range": [500, 1000],
+            "color": "rgb(240,140,17)"
+        },
+        {
+            "description": "200～499",
+            "range": [200, 500],
+            "color": "rgb(244,207,0)"
+        },
+        {
+            "description": "1～199",
+            "range": [1, 200],
+            "color": "rgb(110,185,53)"
+        },
+        {
+            "description": "積雪なし",
+            "range": [-1, 1],
+            "color": ""
+        }
+    ]
+}

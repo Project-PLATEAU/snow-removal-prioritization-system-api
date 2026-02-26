@@ -1,0 +1,40 @@
+{
+    "title": "除雪優先度",
+    "legend": [
+        {
+            "description": "建物倒壊積雪量 150%以上",
+            "range": [150, null],
+            "color": "rgb(139, 0, 139)"
+        },
+        {
+            "description": "建物倒壊積雪量 125%以上",
+            "range": [125, 150],
+            "color": "rgb(178, 34, 34)"
+        },
+        {
+            "description": "建物倒壊積雪量 100%以上",
+            "range": [100, 125],
+            "color": "rgb(255, 140, 0)"
+        },
+        {
+            "description": "建物倒壊積雪量 100%未満",
+            "range": [75, 100],
+            "color": "rgb(255, 215, 0)"
+        },
+        {
+            "description": "建物倒壊積雪量 75%未満",
+            "range": [50, 75],
+            "color": "rgb(173, 255, 0)"
+        },
+        {
+            "description": "建物倒壊積雪量 50%未満",
+            "range": [0.1, 50],
+            "color": "rgb(0, 191, 255)"
+        },
+        {
+            "description": "積雪なし",
+            "range": [-1, 0.1],
+            "color": ""
+        }
+    ]
+}

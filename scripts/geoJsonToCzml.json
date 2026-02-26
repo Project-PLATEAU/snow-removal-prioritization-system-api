@@ -1,0 +1,86 @@
+{
+  "kindlevels":[
+    {
+      "kind": "SnowRemovalPriority",
+      "target_prop": "snow_removal_priority",
+      "levels": [
+        {
+          "range": [null, 50],
+          "color": [0, 191, 255, 150 ]
+        },
+        {
+          "range": [50, 75],
+          "color": [173, 255, 0, 150 ]
+        },
+        {
+          "range": [75, 100 ],
+          "color": [255, 215, 0, 150 ]
+        },
+        {
+          "range": [100, 125 ],
+          "color": [255, 140, 0, 150 ]
+        },
+        {
+          "range": [125, 150],
+          "color": [178, 34, 34, 150 ]
+        },
+        {
+          "range": [150, null],
+          "color": [139,0, 139, 150]
+        }
+      ]
+    },
+    {
+      "kind": "SnowLoad",
+      "target_prop": "snow_load",
+      "levels": [
+        {
+          "range": [1, 200],
+          "color": [110,185,53, 150 ]
+        },
+        {
+          "range": [200, 500],
+          "color": [244,207,0, 150 ]
+        },
+        {
+          "range": [500, 1000 ],
+          "color": [240,140,17, 150 ]
+        },
+        {
+          "range": [1000, 2000 ],
+          "color": [199,22,30, 150 ]
+        },
+        {
+          "range": [2000, null],
+          "color": [96,29,127, 150]
+        }
+      ]
+    },
+    {
+      "kind": "SnowDepth",
+      "target_prop": "snow_depth",
+      "levels": [
+        {
+          "range": [0.2, 0.5],
+          "color": [173, 255, 0, 150 ]
+        },
+        {
+          "range": [0.5, 1.0 ],
+          "color": [255, 215, 0, 150 ]
+        },
+        {
+          "range": [1.0, 1.5 ],
+          "color": [255, 140, 0, 150 ]
+        },
+         {
+          "range": [1.5, 2.0],
+          "color": [178, 34, 34, 150 ]
+        },
+        {
+          "range": [2.0, null],
+          "color": [139,0, 139, 150]
+        }
+      ]
+    }
+  ]
+}
