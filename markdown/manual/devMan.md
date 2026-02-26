@@ -83,5 +83,7 @@ DATA_DIR=/mnt/disk/data
 
 ```
 cd /var/www/html/api/setup
-bash data_dir_setup.sh
+bash data_dir_setup.sh data_dir
 ```
+
+ここで`data_dir`は演算データのディレクトリ（例えば、`/mnt/disk/data`）を示します。
