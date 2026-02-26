@@ -103,7 +103,7 @@ pip install -r requirements.txt
 
 ```
 cd /var/www/html/api/setup
-bash data_dir_setup.sh data_dir
+bash data_dir_setup.sh /mnt/disk/sample_data
 ```
 
-ここで`data_dir`は演算データのディレクトリ（例えば、`/mnt/disk/data`）を示します。
+ここで`/mnt/disk/sample_data`の代わりに、実際の演算データのディレクトリを設定します。
