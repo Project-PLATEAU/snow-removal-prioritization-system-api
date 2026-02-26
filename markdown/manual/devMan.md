@@ -77,6 +77,15 @@ SCRIPT_PATH=/var/www/html/api/scripts
 DATA_DIR=/mnt/disk/data
 ```
 
+以下のコマンドで必要なPython仮想環境を作成します。
+
+```
+cd /var/www/html/api/scripts/
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
 ## 3-4 データディレクトリの準備
 
 以下のスクリプトを実行すると、データディレクトリ中に演算データへのリンク及び凡例情報ファイルが作成されます。

@@ -172,6 +172,12 @@ DB_PASS=plateau_user_password
 SCRIPT_PATH=/var/www/html/api/scripts
 DATA_DIR=/mnt/disk/data
 </code></pre>
+<p>以下のコマンドで必要なPython仮想環境を作成します。</p>
+<pre><code>cd /var/www/html/api/scripts/
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+</code></pre>
 <h2 id="3-4-データディレクトリの準備">3-4 データディレクトリの準備</h2>
 <p>以下のスクリプトを実行すると、データディレクトリ中に演算データへのリンク及び凡例情報ファイルが作成されます。</p>
 <pre><code>cd /var/www/html/api/setup
