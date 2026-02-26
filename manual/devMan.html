@@ -167,7 +167,11 @@ git clone --branch main --single-branch https://github.com/Project-PLATEAU/snow-
 composer install
 </code></pre>
 <h2 id="3-3-環境設定">3-3 環境設定</h2>
-<p>インストールしたディレクトリ<code>/var/www/html/api</code>にある<code>.env.example</code>を<code>.env</code>にコピーし、テキストエディターなどで必要な設定を行います。データベースの設定は3-1にて設定した値を記入します。また、演算システムによって作成されるデータへのパスは、<code>DATA_DIR</code>に設定します。</p>
+<p>以下のコマンドで環境設定ファイルを作成します。</p>
+<pre><code>cd /var/www/html/api
+cp .env.example　.env
+</code></pre>
+<p><code>.env</code>をテキストエディターで開き、設定を行います。データベースの設定は3-1にて設定した値を記入します。また、演算システムによって作成されるデータへのパスは、<code>DATA_DIR</code>に設定します。</p>
 <pre><code>DB_NAME=plateau
 DB_USER=plateau_user
 DB_PASS=plateau_user_password
