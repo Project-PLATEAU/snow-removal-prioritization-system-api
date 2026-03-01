@@ -10,6 +10,9 @@
 > * [snow-removal-prioritization-system-data](https://github.com/Project-PLATEAU/snow-removal-prioritization-system-data) （データ演算）
 > * snow-removal-prioritization-system-api　（Web API、本リポジトリ）
 
+> [!NOTE]
+> 本システムは長岡市及び栃尾地区を対象としたものです。
+
 # 2 動作環境
 
 本システムの動作環境は以下のとおりです。
@@ -22,7 +25,7 @@
 | データベース | MySQL | 8.0.45 |
 | バージョン管理 | git | 2.43.0 |
 | PHPパッケージ管理 | composer | 2.9.5 |
-| スクリプト言語 | Python<br>必要なモジュール：<br>annotated-types 0.7.0<br>geojson 3.2.0<br>numpy 2.3.2<br>pydantic 2.11.7<br>pydantic_core 2.33.2<br>python-dateutil 2.9.0.post0<br>six 1.17.0<br>typing-inspection 0.4.1<br>typing_extensions 4.14.1<br>以下のディレクトリに仮想環境を作成する<br>`/var/www/html/api/scripts/venv` | 3.12.3 |
+| スクリプト言語 | Python | 3.12.3 |
 
 # 3 設定手順
 
@@ -69,41 +72,44 @@ composer install
 
 ## 3-3 環境設定
 
-以下のコマンドで環境設定ファイルを作成します。
+環境設定ファイル`.env`はセキュリティの理由でリポジトリに含まれていないため、以下のコマンドでサンプル設定ファイル`.env.example`をコピーして環境設定ファイルを作成します。
+
 
 ```
 cd /var/www/html/api
-cp .env.example　.env
+cp .env.example .env
 ```
 
-`.env`をテキストエディターで開き、設定を行います。データベースの設定は3-1にて設定した値を記入します。また、演算システムによって作成されるデータへのパスは、`DATA_DIR`に設定します。
+次は、環境設定ファイル`.env`をテキストエディタで開き、データベースのパラメータ、スクリプトのディレクトリ、及び演算システムによって作成されるデータへのパスを設定します。データベースのパラメータは3-1にて設定した値を記入します。
 
 ```
+# データベースの設定
 DB_NAME=plateau
 DB_USER=plateau_user
 DB_PASS=plateau_user_password
-DATA_DIR=/mnt/disk/data
 
 # PLATEAU VIEW向けデータを作成するスクリプトのディレクトリ
 SCRIPT_PATH=/var/www/html/api/scripts
+
+# 演算データのディレクトリ
+DATA_DIR=/mnt/disk-demo/sample_data
 ```
 
-以下のコマンドで必要なPython仮想環境を作成します。
+なお、データへのパス`DATA_DIR`は、以下の表に示す方法で設定します。
 
-```
-cd /var/www/html/api/scripts/
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
+| 設定値 | 説明 |
+| - | - |
+| `/mnt/disk-demo/sample_data` | 長岡市、栃尾地区の2026年2月1日0時の1時間分のサンプルデータ<br>（本レポジトリに含まれている） |
+| `/mnt/disk-demo/data` | 演算対象のデータ<br>（本レポジトリに含まれていない） |
 
-## 3-4 データディレクトリの準備
+## 3-4 他の準備
 
-以下のスクリプトを実行すると、URLで取得できるデータ用のディレクトリに演算データへのリンク及び凡例情報ファイルが作成されます。
+以下のコマンドを実行すると、演算データをURLで取得できるためのセットアップ、及びPython仮想環境のセットアップを行います。
 
 ```
 cd /var/www/html/api/setup
-bash data_dir_setup.sh /mnt/disk/sample_data
+bash data_dir_setup.sh /mnt/disk-demo/sample_data
+bash python_venv_setup.sh
 ```
 
-ここで`/mnt/disk/sample_data`の代わりに、実際の演算データのディレクトリを設定します。
+データへのパス`/mnt/disk-demo/sample_data`のパラメータは、上記の表に示した方法で設定します。

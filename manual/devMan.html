@@ -90,6 +90,10 @@
 <li>snow-removal-prioritization-system-api　（Web API、本リポジトリ）</li>
 </ul>
 </div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>本システムは長岡市及び栃尾地区を対象としたものです。</p>
+</div>
 <h1 id="2-動作環境">2 動作環境</h1>
 <p>本システムの動作環境は以下のとおりです。</p>
 <table>
@@ -133,7 +137,7 @@
 </tr>
 <tr>
 <td>スクリプト言語</td>
-<td>Python<br>必要なモジュール：<br>annotated-types 0.7.0<br>geojson 3.2.0<br>numpy 2.3.2<br>pydantic 2.11.7<br>pydantic_core 2.33.2<br>python-dateutil 2.9.0.post0<br>six 1.17.0<br>typing-inspection 0.4.1<br>typing_extensions 4.14.1<br>以下のディレクトリに仮想環境を作成する<br><code>/var/www/html/api/scripts/venv</code></td>
+<td>Python</td>
 <td>3.12.3</td>
 </tr>
 </tbody>
@@ -167,31 +171,48 @@ git clone --branch main --single-branch https://github.com/Project-PLATEAU/snow-
 composer install
 </code></pre>
 <h2 id="3-3-環境設定">3-3 環境設定</h2>
-<p>以下のコマンドで環境設定ファイルを作成します。</p>
+<p>環境設定ファイル<code>.env</code>はセキュリティの理由でリポジトリに含まれていないため、以下のコマンドでサンプル設定ファイル<code>.env.example</code>をコピーして環境設定ファイルを作成します。</p>
 <pre><code>cd /var/www/html/api
-cp .env.example　.env
+cp .env.example .env
 </code></pre>
-<p><code>.env</code>をテキストエディターで開き、設定を行います。データベースの設定は3-1にて設定した値を記入します。また、演算システムによって作成されるデータへのパスは、<code>DATA_DIR</code>に設定します。</p>
-<pre><code>DB_NAME=plateau
+<p>次は、環境設定ファイル<code>.env</code>をテキストエディタで開き、データベースのパラメータ、スクリプトのディレクトリ、及び演算システムによって作成されるデータへのパスを設定します。データベースのパラメータは3-1にて設定した値を記入します。</p>
+<pre><code># データベースの設定
+DB_NAME=plateau
 DB_USER=plateau_user
 DB_PASS=plateau_user_password
-DATA_DIR=/mnt/disk/data
 
 # PLATEAU VIEW向けデータを作成するスクリプトのディレクトリ
 SCRIPT_PATH=/var/www/html/api/scripts
+
+# 演算データのディレクトリ
+DATA_DIR=/mnt/disk-demo/sample_data
 </code></pre>
-<p>以下のコマンドで必要なPython仮想環境を作成します。</p>
-<pre><code>cd /var/www/html/api/scripts/
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-</code></pre>
-<h2 id="3-4-データディレクトリの準備">3-4 データディレクトリの準備</h2>
-<p>以下のスクリプトを実行すると、URLで取得できるデータ用のディレクトリに演算データへのリンク及び凡例情報ファイルが作成されます。</p>
+<p>なお、データへのパス<code>DATA_DIR</code>は、以下の表に示す方法で設定します。</p>
+<table>
+<thead>
+<tr>
+<th>設定値</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/mnt/disk-demo/sample_data</code></td>
+<td>長岡市、栃尾地区の2026年2月1日0時の1時間分のサンプルデータ<br>（本レポジトリに含まれている）</td>
+</tr>
+<tr>
+<td><code>/mnt/disk-demo/data</code></td>
+<td>演算対象のデータ<br>（本レポジトリに含まれていない）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-4-他の準備">3-4 他の準備</h2>
+<p>以下のコマンドを実行すると、演算データをURLで取得できるためのセットアップ、及びPython仮想環境のセットアップを行います。</p>
 <pre><code>cd /var/www/html/api/setup
-bash data_dir_setup.sh /mnt/disk/sample_data
+bash data_dir_setup.sh /mnt/disk-demo/sample_data
+bash python_venv_setup.sh
 </code></pre>
-<p>ここで<code>/mnt/disk/sample_data</code>の代わりに、実際の演算データのディレクトリを設定します。</p>
+<p>データへのパス<code>/mnt/disk-demo/sample_data</code>のパラメータは、上記の表に示した方法で設定します。</p>
 
 </article>
           </div>

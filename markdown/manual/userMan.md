@@ -6,15 +6,12 @@
 
 # 2 APIの使い方
 
-除雪優先度算出システム用のWeb APIは以下のような形式でアクセスできます。
+除雪優先度算出システム用のWeb APIは以下のような形式でアクセスできます。\
+`<ドメイン名>/api/<パラメータ>`
 
-```
-<システムURL>/api/<パラメータ>
-```
+以降は例として<ドメイン名>を`http://34.104.149.153`とします。
 
-ここで、`<システムURL>`は本システムにアクセスするためのURL（例えば、`https://data.jyosetsu-yusendo.jp`）です。\
-取得されるデータは以下に示す`<パラメータ>`によって決定します。\
-以降は`.../api/...`として表記します。
+また、`<パラメータ>`は、データによって異なり、以下に説明します。
 
 
 ## 2-1 PLATEAU VIEW向けエクスポートデータの取得
@@ -22,7 +19,7 @@
 PLATEAU VIEWのMyDataにインポート可能なCZMLデータを取得します。
 
 **URL：**\
-`.../api/get_plateau_data`
+`http://34.104.149.153/api/get_plateau_data`
 
 **メソッド：**\
 `GET`
@@ -37,7 +34,7 @@ PLATEAU VIEWのMyDataにインポート可能なCZMLデータを取得します�
 
 **使用例：**
 ```
-.../api/get_plateau_data?kind=SnowRemovalPriority&lon1=138.83276&lon2=138.869239&lat1=37.4407&lat2=37.4553&time=202602171800
+http://34.104.149.153/api/get_plateau_data?kind=SnowRemovalPriority&lon1=138.83276&lon2=138.869239&lat1=37.4407&lat2=37.4553&time=202602171800
 ```
 
 ## 2-2 QGIS向けエクスポートデータの取得
@@ -45,7 +42,7 @@ PLATEAU VIEWのMyDataにインポート可能なCZMLデータを取得します�
 QGISにインポート可能なGeoJSONデータ（全範囲）を取得します。
 
 **URL：**\
-`.../api/get_qgis_data`
+`http://34.104.149.153/api/get_qgis_data`
 
 **メソッド：**\
 `GET`
@@ -58,7 +55,7 @@ QGISにインポート可能なGeoJSONデータ（全範囲）を取得します
 
 **使用例：**
 ```
-.../api/get_qgis_data?time=202602171800
+http://34.104.149.153/api/get_qgis_data?time=202602171800
 ```
 
 ## 2-3 フィードバック情報の送信
@@ -66,7 +63,7 @@ QGISにインポート可能なGeoJSONデータ（全範囲）を取得します
 表示システムによって送信されたフィードバック情報をデータベースに保存します。
 
 **URL：**\
-`.../api/send_field_reports`
+`http://34.104.149.153/api/send_field_reports`
 
 **メソッド：**\
 `POST`
@@ -85,7 +82,7 @@ QGISにインポート可能なGeoJSONデータ（全範囲）を取得します
 表示システムによって送信されたアラート通知設定情報をデータベースに保存します。
 
 **URL：**\
-`.../api/submit_alert`
+`http://34.104.149.153/api/submit_alert`
 
 **メソッド：**\
 `POST`
@@ -108,17 +105,17 @@ QGISにインポート可能なGeoJSONデータ（全範囲）を取得します
 
 **分布画像（積雪深）**
 ```
-.../data/png/sd/YYYY/MM/sd_YYYYMMDDHH00.png
+http://34.104.149.153/data/png/sd/YYYY/MM/sd_YYYYMMDDHH00.png
 ```
 
 **分布画像（積雪重量）**
 ```
-.../data/png/sw/YYYY/MM/sw_YYYYMMDDHH00.png
+http://34.104.149.153/data/png/sw/YYYY/MM/sw_YYYYMMDDHH00.png
 ```
 
 **建物の形状、積雪重量、除雪優先度のデータ**
 ```
-.../data/bld_components/YYYY/MM/YYYYMMDDHH00_area_n.geojson
+http://34.104.149.153/data/bld_components/YYYY/MM/YYYYMMDDHH00_area_n.geojson
 ```
 ここで、areaは地域の名前（nagaoka, tochio）、nは詳細度（1:建物幅約10m以下,2:建物幅約10～15m,3:建物幅約15m以上）です。
 
