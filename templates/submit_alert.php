@@ -31,6 +31,18 @@ if ($error_msg === '') {
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
     ];
     $pdo = new PDO($dsn, $user, $pass, $options);
+    
+    $pdo->exec("
+        CREATE TABLE IF NOT EXISTS alerts (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            name VARCHAR(255) NOT NULL,
+            email VARCHAR(255) NOT NULL,
+            bld_id VARCHAR(255) NOT NULL,
+            bld_name VARCHAR(255) NOT NULL
+        ) ENGINE=InnoDB
+          DEFAULT CHARSET=utf8mb4
+          COLLATE=utf8mb4_unicode_ci
+    ");
 
     if ($alertStopCheck) {
         $stmt = $pdo->prepare(

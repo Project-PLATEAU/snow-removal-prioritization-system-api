@@ -30,6 +30,17 @@ if ($error_msg === '') {
     ];
     $pdo = new PDO($dsn, $user, $pass, $options);
     
+    $pdo->exec("
+        CREATE TABLE IF NOT EXISTS feedback (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            username VARCHAR(255) NOT NULL,
+            email VARCHAR(255) NOT NULL,
+            feedback text NOT NULL
+        ) ENGINE=InnoDB
+          DEFAULT CHARSET=utf8mb4
+          COLLATE=utf8mb4_unicode_ci
+    ");
+    
     $stmt = $pdo->prepare(
         'INSERT INTO feedback (username, email, feedback)
         VALUES (:username, :email, :feedback)'
