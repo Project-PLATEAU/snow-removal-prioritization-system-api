@@ -37,10 +37,10 @@
 ```
 sudo mysql -u root -p
 
-mysql> CREATE DATABASE plateau;
-mysql> CREATE USER 'plateau_user'@'localhost' IDENTIFIED BY 'plateau_user_password';
-mysql> GRANT SELECT, INSERT, UPDATE, DELETE, CREATE ON plateau.* TO 'plateau_user'@'localhost';
-mysql> EXIT;
+CREATE DATABASE plateau;
+CREATE USER 'plateau_user'@'localhost' IDENTIFIED BY 'plateau_user_password';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE ON plateau.* TO 'plateau_user'@'localhost';
+EXIT;
 ```
 
 WEBサーバーのドキュメントルートに本システム用のディレクトリ及びURLで取得できるデータ用のディレクトリを以下のコマンドで作成します。\

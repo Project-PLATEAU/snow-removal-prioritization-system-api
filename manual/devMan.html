@@ -148,10 +148,10 @@
 なお、以下のコマンド内の<code>plateau_user_password</code>には、任意のパスワードを設定してください。</p>
 <pre><code>sudo mysql -u root -p
 
-mysql&gt; CREATE DATABASE plateau;
-mysql&gt; CREATE USER 'plateau_user'@'localhost' IDENTIFIED BY 'plateau_user_password';
-mysql&gt; GRANT SELECT, INSERT, UPDATE, DELETE, CREATE ON plateau.* TO 'plateau_user'@'localhost';
-mysql&gt; EXIT;
+CREATE DATABASE plateau;
+CREATE USER 'plateau_user'@'localhost' IDENTIFIED BY 'plateau_user_password';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE ON plateau.* TO 'plateau_user'@'localhost';
+EXIT;
 </code></pre>
 <p>WEBサーバーのドキュメントルートに本システム用のディレクトリ及びURLで取得できるデータ用のディレクトリを以下のコマンドで作成します。<br>
 <code>user</code>の代わりに、OSのユーザー名を設定してください。</p>
