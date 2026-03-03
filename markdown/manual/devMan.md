@@ -10,6 +10,8 @@
 > * [snow-removal-prioritization-system-data](https://github.com/Project-PLATEAU/snow-removal-prioritization-system-data) （データ演算）
 > * snow-removal-prioritization-system-api　（Web API、本リポジトリ）
 
+![](../resources/devMan/architecture.png)
+
 > [!NOTE]
 > 本システムは長岡市及び栃尾地区を対象としたものです。
 
@@ -34,40 +36,42 @@
 本システムは、データをデータベースに保存する部分があるため、データを格納するデータベースを作成し、本システムから当該データベースへ接続するための認証情報を持つアカウントを作成します。これらの操作は、サーバー側のターミナルから実行します。\
 なお、以下のコマンド内の`plateau_user_password`には、任意のパスワードを設定してください。
 
+```shell-session
+$ sudo mysql -u root -p
 ```
-sudo mysql -u root -p
 
-CREATE DATABASE plateau;
-CREATE USER 'plateau_user'@'localhost' IDENTIFIED BY 'plateau_user_password';
-GRANT SELECT, INSERT, UPDATE, DELETE, CREATE ON plateau.* TO 'plateau_user'@'localhost';
-EXIT;
+```SQL
+mysql> CREATE DATABASE plateau;
+mysql> CREATE USER 'plateau_user'@'localhost' IDENTIFIED BY 'plateau_user_password';
+mysql> GRANT SELECT, INSERT, UPDATE, DELETE, CREATE ON plateau.* TO 'plateau_user'@'localhost';
+mysql> EXIT;
 ```
 
 WEBサーバーのドキュメントルートに本システム用のディレクトリ及びURLで取得できるデータ用のディレクトリを以下のコマンドで作成します。\
 `user`の代わりに、OSのユーザー名を設定してください。
 
-```
-cd /var/www/html
-sudo mkdir api
-sudo mkdir data
-sudo chown user:user api
-sudo chown user:user data
+```shell-session
+$ cd /var/www/html
+$ sudo mkdir api
+$ sudo mkdir data
+$ sudo chown user:user api
+$ sudo chown user:user data
 ```
 
 ## 3-2 ソースファイルのダウンロード
 
 本システム用のディレクトリにソースファイルを以下のコマンドでダウンロードし、必要な設定を行います。
 
-```
-cd /var/www/html/api
-git clone --branch main --single-branch https://github.com/Project-PLATEAU/snow-removal-prioritization-system-api.git .
+```shell-session
+$ cd /var/www/html/api
+$ git clone --branch main --single-branch https://github.com/Project-PLATEAU/snow-removal-prioritization-system-api.git .
 ```
 
 以下のコマンドで必要な外部ライブラリ（パッケージ）を一括ダウンロード・インストールします。
 
-```
-cd /var/www/html/api
-composer install
+```shell-session
+$ cd /var/www/html/api
+$ composer install
 ```
 
 ## 3-3 環境設定
@@ -75,14 +79,15 @@ composer install
 環境設定ファイル`.env`はセキュリティの理由でリポジトリに含まれていないため、以下のコマンドでサンプル設定ファイル`.env.example`をコピーして環境設定ファイルを作成します。
 
 
-```
-cd /var/www/html/api
-cp .env.example .env
+```shell-session
+$ cd /var/www/html/api
+$ cp .env.example .env
 ```
 
 次は、環境設定ファイル`.env`をテキストエディタで開き、データベースのパラメータ、スクリプトのディレクトリ、及び演算システムによって作成されるデータへのパスを設定します。データベースのパラメータは3-1にて設定した値を記入します。
 
-```
+`/var/www/html/api/.env`
+```bash
 # データベースの設定
 DB_NAME=plateau
 DB_USER=plateau_user
@@ -106,10 +111,10 @@ DATA_DIR=/mnt/disk-demo/sample_data
 
 以下のコマンドを実行すると、演算データをURLで取得できるためのセットアップ、及びPython仮想環境のセットアップを行います。
 
-```
-cd /var/www/html/api/setup
-bash data_dir_setup.sh /mnt/disk-demo/sample_data
-bash python_venv_setup.sh
+```shell-session
+$ cd /var/www/html/api/setup
+$ bash data_dir_setup.sh /mnt/disk-demo/sample_data
+$ bash python_venv_setup.sh
 ```
 
 データへのパス`/mnt/disk-demo/sample_data`のパラメータは、上記の表に示した方法で設定します。
