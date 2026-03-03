@@ -11,14 +11,14 @@
 
 本リポジトリでは、Project PLATEAUの令和7年度の建築・都市のDXの推進に向けたユースケース開発業務として実施したUC25-01「豪雪地帯の建築物における除雪優先度算出システム及び被災現場支援ツールの開発」について、その成果物である「除雪優先度算出システム」のソースコードを公開しています。「除雪優先度算出システム」は、PLATEAUの3D都市モデルを活用し、個々の建物の積雪重量や除雪優先度の推定及びブラウザ上での可視化を行うシステムです。
 
-なお、「除雪優先度算出システム」は以下3つのソースコードで構成されており、本リポジトリでは「2. snow-removal_prioritization-system-api」を公開しています。インストールの順序は問いません。
+なお、「除雪優先度算出システム」は以下3つのソースコードで構成されており、本リポジトリでは「3. snow-removal_prioritization-system-api」を公開しています。インストールは以下の順序で行います。
 
 1. [snow-removal-prioritization-system](https://github.com/Project-PLATEAU/snow-removal-prioritization-system)\
 3D都市モデルを活用し個々の建物の積雪重量や除雪優先度を算出・表示するシステム
-2. [snow-removal-prioritization-system-api](https://github.com/Project-PLATEAU/snow-removal-prioritization-system-api)\
-除雪優先度算出システムに用いるデータ（演算データ、フィードバック情報等）を取得・保存するためのAPI
-3. [snow-removal-prioritization-system-data](https://github.com/Project-PLATEAU/snow-removal-prioritization-system-data)\
+2. [snow-removal-prioritization-system-data](https://github.com/Project-PLATEAU/snow-removal-prioritization-system-data)\
 除雪優先度算出システムに用いるデータ（気象データ、3D都市モデル等）を収集・算出・作成するシステム
+3. [snow-removal-prioritization-system-api](https://github.com/Project-PLATEAU/snow-removal-prioritization-system-api)\
+除雪優先度算出システムに用いるデータ（演算データ、フィードバック情報等）を取得・保存するためのAPI
 
 ![](img/architecture.png)
 
