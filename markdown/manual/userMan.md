@@ -28,7 +28,7 @@ PLATEAU VIEWのMyDataにインポート可能なCZMLデータを取得します�
 
 | パラメータ | 説明 | 形式 |
 | - | - | - |
-| kind | データの種類 | SnowRemovalPriority: 除雪優先度<br>SnowLoad: 積雪重量 |
+| kind | データの種類 | SnowRemovalPriority: 除雪優先度<br>SnowLoad: 積雪重量<br>SnowDepth: 積雪深 |
 | lon1<br>lon2<br>lat1<br>lat2 | 取得範囲 | 度単位 |
 | time | 取得データの時間 | YYYYMMDDHH00 |
 
